@@ -6,19 +6,9 @@ interface DashboardProps {
   onLogout: () => void;
   theme: 'light' | 'dark';
   onToggleTheme: () => void;
-  onSelectPlanA?: () => void;
 }
 
-export default function Dashboard({ onSelectCourse, onLogout, theme, onToggleTheme, onSelectPlanA }: DashboardProps) {
-
-  const handleCourseClick = (course: any) => {
-    if (course.link === 'plana-internal' && onSelectPlanA) {
-      onSelectPlanA();
-    } else {
-      onSelectCourse(course.link);
-    }
-  };
-
+export default function Dashboard({ onSelectCourse, onLogout, theme, onToggleTheme }: DashboardProps) {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-300">
       
@@ -68,7 +58,7 @@ export default function Dashboard({ onSelectCourse, onLogout, theme, onToggleThe
           {courses.map((course) => (
             <div
               key={course.id}
-              onClick={() => handleCourseClick(course)}
+              onClick={() => onSelectCourse(course.link)}
               className="mobile-card group cursor-pointer w-full max-w-full"
             >
               
