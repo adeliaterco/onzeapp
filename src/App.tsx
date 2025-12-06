@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Viewer from './components/Viewer';
-import Register from './components/Register';
 
-type Screen = 'login' | 'dashboard' | 'viewer' | 'plana';
+type Screen = 'login' | 'dashboard' | 'viewer';
 type Theme = 'light' | 'dark';
 
 function App() {
@@ -119,10 +118,6 @@ function App() {
         onToggleTheme={toggleTheme}
       />
     );
-  }
-
-  if (screen === 'plana') {
-    return <Register theme={theme} onToggleTheme={toggleTheme} />;
   }
 
   return (
