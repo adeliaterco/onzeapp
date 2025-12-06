@@ -9,11 +9,10 @@ interface LoginProps {
 
 export default function Login({ onLogin, theme, onToggleTheme }: LoginProps) {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && password) {
+    if (email) {
       onLogin();
     }
   };
@@ -60,22 +59,6 @@ export default function Login({ onLogin, theme, onToggleTheme }: LoginProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 placeholder="tu@email.com"
-                required
-              />
-            </div>
-
-            {/* Campo Password */}
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Contraseña
-              </label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                placeholder="Tu contraseña"
                 required
               />
             </div>
