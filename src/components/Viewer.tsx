@@ -1,4 +1,4 @@
-import { ArrowLeft, Moon, Sun, RefreshCw, Home } from 'lucide-react';
+import { ArrowLeft, Moon, Sun, RefreshCw } from 'lucide-react';
 
 interface ViewerProps {
   url: string;
@@ -16,46 +16,55 @@ export default function Viewer({ url, onBack, theme, onToggleTheme }: ViewerProp
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-300">
-      <header className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-20 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="min-h-screen w-full overflow-x-hidden bg-gray-50 dark:bg-gray-900 transition-all duration-300">
+      
+      {/* Header Mobile Otimizado */}
+      <header className="w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-20 shadow-sm safe-area-top">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             
-            <div className="flex items-center gap-4">
+            {/* Navegação Esquerda */}
+            <div className="flex items-center gap-2 sm:gap-4 min-w-0 flex-1">
               <button
                 onClick={onBack}
-                className="flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 transform hover:scale-105"
+                className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 transform active:scale-95 touch-manipulation flex-shrink-0"
               >
-                <ArrowLeft size={18} />
-                <span className="font-medium">Voltar</span>
+                <ArrowLeft size={16} className="sm:hidden" />
+                <ArrowLeft size={18} className="hidden sm:block" />
+                <span className="font-medium text-sm sm:text-base hidden sm:inline">Voltar</span>
+                <span className="font-medium text-sm sm:hidden">Back</span>
               </button>
-              
-              <div className="hidden md:flex items-center gap-2 px-3 py-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                <Home size={16} className="text-blue-600 dark:text-blue-400" />
-                <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
-                  Visualizando Conteúdo
-                </span>
-              </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            {/* Controles Direita */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              
+              {/* Refresh Button */}
               <button
                 onClick={handleRefresh}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 transform hover:scale-105 hover:rotate-180"
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 transform active:scale-95 hover:rotate-180 touch-manipulation"
                 title="Atualizar conteúdo"
               >
-                <RefreshCw size={18} className="text-gray-700 dark:text-gray-300" />
+                <RefreshCw size={16} className="sm:hidden text-gray-700 dark:text-gray-300" />
+                <RefreshCw size={18} className="hidden sm:block text-gray-700 dark:text-gray-300" />
               </button>
               
+              {/* Toggle Tema */}
               <button
                 onClick={onToggleTheme}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 transform hover:scale-105"
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 transform active:scale-95 touch-manipulation"
                 title="Alterar tema"
               >
                 {theme === 'light' ? (
-                  <Moon size={18} className="text-gray-700 dark:text-gray-300" />
+                  <>
+                    <Moon size={16} className="sm:hidden text-gray-700 dark:text-gray-300" />
+                    <Moon size={18} className="hidden sm:block text-gray-700 dark:text-gray-300" />
+                  </>
                 ) : (
-                  <Sun size={18} className="text-gray-700 dark:text-gray-300" />
+                  <>
+                    <Sun size={16} className="sm:hidden text-gray-700 dark:text-gray-300" />
+                    <Sun size={18} className="hidden sm:block text-gray-700 dark:text-gray-300" />
+                  </>
                 )}
               </button>
             </div>
@@ -63,20 +72,23 @@ export default function Viewer({ url, onBack, theme, onToggleTheme }: ViewerProp
         </div>
       </header>
 
-      <main className="h-[calc(100vh-80px)]">
-        <div className="h-full mx-auto bg-white dark:bg-gray-800 shadow-lg">
+      {/* Container do WebView Mobile Otimizado */}
+      <main className="w-full h-[calc(100vh-60px)] sm:h-[calc(100vh-80px)] safe-area-bottom">
+        <div className="w-full h-full bg-white dark:bg-gray-800">
           
+          {/* Loading State */}
           <div className="absolute inset-0 flex items-center justify-center bg-gray-50 dark:bg-gray-900 z-10" id="loading-overlay">
-            <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
-              <p className="text-gray-600 dark:text-gray-400">Carregando conteúdo...</p>
+            <div className="text-center px-4">
+              <div className="inline-block animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-b-2 border-blue-600 mb-4"></div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Carregando conteúdo...</p>
             </div>
           </div>
 
+          {/* WebView Iframe Responsivo */}
           <iframe
             id="content-iframe"
             src={url}
-            className="w-full h-full border-0 rounded-lg"
+            className="responsive-iframe"
             title="Conteúdo do Curso"
             onLoad={() => {
               const overlay = document.getElementById('loading-overlay');
