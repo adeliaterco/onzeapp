@@ -17,12 +17,10 @@ export default function Viewer({ url, onBack, theme, onToggleTheme }: ViewerProp
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-300">
-      {/* Header Moderno */}
       <header className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             
-            {/* Navegação Esquerda */}
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -40,9 +38,7 @@ export default function Viewer({ url, onBack, theme, onToggleTheme }: ViewerProp
               </div>
             </div>
 
-            {/* Controles Direita */}
             <div className="flex items-center gap-3">
-              {/* Botão Refresh */}
               <button
                 onClick={handleRefresh}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 transform hover:scale-105 hover:rotate-180"
@@ -51,7 +47,6 @@ export default function Viewer({ url, onBack, theme, onToggleTheme }: ViewerProp
                 <RefreshCw size={18} className="text-gray-700 dark:text-gray-300" />
               </button>
               
-              {/* Toggle Tema */}
               <button
                 onClick={onToggleTheme}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 transform hover:scale-105"
@@ -68,4 +63,32 @@ export default function Viewer({ url, onBack, theme, onToggleTheme }: ViewerProp
         </div>
       </header>
 
-      {/* Container do*
+      <main className="h-[calc(100vh-80px)]">
+        <div className="h-full mx-auto bg-white dark:bg-gray-800 shadow-lg">
+          
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-50 dark:bg-gray-900 z-10" id="loading-overlay">
+            <div className="text-center">
+              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
+              <p className="text-gray-600 dark:text-gray-400">Carregando conteúdo...</p>
+            </div>
+          </div>
+
+          <iframe
+            id="content-iframe"
+            src={url}
+            className="w-full h-full border-0 rounded-lg"
+            title="Conteúdo do Curso"
+            onLoad={() => {
+              const overlay = document.getElementById('loading-overlay');
+              if (overlay) {
+                overlay.style.display = 'none';
+              }
+            }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </main>
+    </div>
+  );
+}
