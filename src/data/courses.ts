@@ -17,7 +17,7 @@ export const courses: Course[] = [
   {
     id: '1',
     title: 'Plan A: Reconquista en 21 Días',
-    thumbnail: 'https://comprarplanseguro.shop/wp-content/uploads/2025/06/Nova-Imagem-Plan-A-Livro.png',
+    thumbnail: 'https://i.ibb.co/CK8F67my/Editedimage-1765052659367.png',
     link: 'https://semloginplan.vercel.app/',
     items: [
       {
