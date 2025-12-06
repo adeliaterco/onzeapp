@@ -2,14 +2,14 @@ import { useState } from 'react';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Viewer from './components/Viewer';
-import { Course, CourseItem } from './data/courses';
 
 type Screen = 'login' | 'dashboard' | 'viewer';
+type Theme = 'light' | 'dark';
 
 function App() {
   const [screen, setScreen] = useState<Screen>('login');
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  const [selectedItem, setSelectedItem] = useState<CourseItem | null>(null);
+  const [theme, setTheme] = useState<Theme>('light');
+  const [selectedUrl, setSelectedUrl] = useState<string | null>(null);
 
   const handleLogin = () => {
     setScreen('dashboard');
@@ -19,9 +19,8 @@ function App() {
     setScreen('login');
   };
 
-  const handleSelectItem = (course: Course, item: CourseItem) => {
-    setSelectedCourse(course);
-    setSelectedItem(item);
+  const handleSelectCourse = (url: string) => {
+    setSelectedUrl(url);
     setScreen('viewer');
   };
 
@@ -29,21 +28,36 @@ function App() {
     setScreen('dashboard');
   };
 
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
+  // Aplicar tema no documento
+  document.documentElement.setAttribute('data-theme', theme);
+
   if (screen === 'login') {
-    return <Login onLogin={handleLogin} />;
+    return <Login onLogin={handleLogin} theme={theme} onToggleTheme={toggleTheme} />;
   }
 
-  if (screen === 'viewer' && selectedCourse && selectedItem) {
+  if (screen === 'viewer' && selectedUrl) {
     return (
       <Viewer
-        course={selectedCourse}
-        item={selectedItem}
+        url={selectedUrl}
         onBack={handleBack}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
     );
   }
 
-  return <Dashboard onSelectItem={handleSelectItem} onLogout={handleLogout} />;
+  return (
+    <Dashboard 
+      onSelectCourse={handleSelectCourse} 
+      onLogout={handleLogout}
+      theme={theme}
+      onToggleTheme={toggleTheme}
+    />
+  );
 }
 
 export default App;
