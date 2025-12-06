@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Viewer from './components/Viewer';
@@ -10,6 +10,17 @@ function App() {
   const [screen, setScreen] = useState<Screen>('login');
   const [theme, setTheme] = useState<Theme>('light');
   const [selectedUrl, setSelectedUrl] = useState<string | null>(null);
+
+  // 🔥 APLICAR TEMA NO HTML
+  useEffect(() => {
+    const html = document.documentElement;
+    
+    if (theme === 'dark') {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+  }, [theme]);
 
   const handleLogin = () => {
     setScreen('dashboard');
@@ -31,9 +42,6 @@ function App() {
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
-
-  // Aplicar tema no documento
-  document.documentElement.setAttribute('data-theme', theme);
 
   if (screen === 'login') {
     return <Login onLogin={handleLogin} theme={theme} onToggleTheme={toggleTheme} />;
