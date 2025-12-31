@@ -94,8 +94,8 @@ export const courses: Course[] = [
   },
   {
     id: '4',
-    title: 'Sistema de Blindaje',
-    thumbnail: 'https://comprarplanseguro.shop/wp-content/uploads/2025/06/imagem_gerada-2025-06-10T233008.344.png',
+    title: 'RELACIÓN SALUDABLE',
+    thumbnail: 'https://i.ibb.co/cKY8gznp/Editedimage-1766799871174.png',
     link: 'https://comprarplanseguro.shop/blindaje/',
     items: [
       {
