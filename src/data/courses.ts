@@ -16,7 +16,7 @@ export interface Course {
 export const courses: Course[] = [
   {
     id: '1',
-    title: 'Plan A: Reconquista en 21 Días',
+    title: 'PRP Reconquista',
     thumbnail: 'https://i.ibb.co/CK8F67my/Editedimage-1765052659367.png',
     link: 'https://semloginplan.vercel.app/',
     items: [
@@ -37,6 +37,32 @@ export const courses: Course[] = [
         title: 'Casos de Estudio',
         type: 'link',
         url: 'https://comprarplanseguro.shop/plan-a/'
+      }
+    ]
+  },
+  {
+    id: '4',
+    title: 'RELACIÓN SALUDABLE',
+    thumbnail: 'https://i.ibb.co/cKY8gznp/Editedimage-1766799871174.png',
+    link: 'https://comprarplanseguro.shop/blindaje/',
+    items: [
+      {
+        id: '4-1',
+        title: 'Blindaje Total de Relación',
+        type: 'video',
+        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+      },
+      {
+        id: '4-2',
+        title: 'Inmunidad Contra Otros Hombres',
+        type: 'pdf',
+        url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+      },
+      {
+        id: '4-3',
+        title: 'Acceder al Sistema',
+        type: 'link',
+        url: 'https://comprarplanseguro.shop/blindaje/'
       }
     ]
   },
@@ -89,32 +115,6 @@ export const courses: Course[] = [
         title: 'Acceder al Protocolo',
         type: 'link',
         url: 'https://comprarplanseguro.shop/protocolo/'
-      }
-    ]
-  },
-  {
-    id: '4',
-    title: 'RELACIÓN SALUDABLE',
-    thumbnail: 'https://i.ibb.co/cKY8gznp/Editedimage-1766799871174.png',
-    link: 'https://comprarplanseguro.shop/blindaje/',
-    items: [
-      {
-        id: '4-1',
-        title: 'Blindaje Total de Relación',
-        type: 'video',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-      },
-      {
-        id: '4-2',
-        title: 'Inmunidad Contra Otros Hombres',
-        type: 'pdf',
-        url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-      },
-      {
-        id: '4-3',
-        title: 'Acceder al Sistema',
-        type: 'link',
-        url: 'https://comprarplanseguro.shop/blindaje/'
       }
     ]
   }
