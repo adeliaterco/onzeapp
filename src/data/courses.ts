@@ -41,35 +41,10 @@ export const courses: Course[] = [
     ]
   },
   {
-    id: '4',
-    title: 'RELACIÓN SALUDABLE',
-    thumbnail: 'https://i.ibb.co/cKY8gznp/Editedimage-1766799871174.png',
-    link: 'https://comprarplanseguro.shop/blindaje/',
-    items: [
-      {
-        id: '4-1',
-        title: 'Blindaje Total de Relación',
-        type: 'video',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-      },
-      {
-        id: '4-2',
-        title: 'Inmunidad Contra Otros Hombres',
-        type: 'pdf',
-        url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-      },
-      {
-        id: '4-3',
-        title: 'Acceder al Sistema',
-        type: 'link',
-        url: 'https://comprarplanseguro.shop/blindaje/'
-      }
-    ]
-  },
-  {
     id: '2',
     title: '15 Maneras Irresistibles en WhatsApp',
-    thumbnail: 'https://comprarplanseguro.shop/wp-content/uploads/2025/06/imagem_gerada-2025-06-12T001538.498.png',
+    thumbnail:
+      'https://comprarplanseguro.shop/wp-content/uploads/2025/06/imagem_gerada-2025-06-12T001538.498.png',
     link: 'https://comprarplanseguro.shop/15-maneras/',
     items: [
       {
@@ -95,7 +70,8 @@ export const courses: Course[] = [
   {
     id: '3',
     title: 'PDE',
-    thumbnail: 'https://comprarplanseguro.shop/wp-content/uploads/2025/06/imagem_gerada-2025-06-11T090923.835.png',
+    thumbnail:
+      'https://comprarplanseguro.shop/wp-content/uploads/2025/06/imagem_gerada-2025-06-11T090923.835.png',
     link: 'https://comprarplanseguro.shop/protocolo/',
     items: [
       {
@@ -115,6 +91,32 @@ export const courses: Course[] = [
         title: 'Acceder al Protocolo',
         type: 'link',
         url: 'https://comprarplanseguro.shop/protocolo/'
+      }
+    ]
+  },
+  {
+    id: '4',
+    title: 'BLINDAJE EMOCIONAL',
+    thumbnail: 'https://i.ibb.co/cKY8gznp/Editedimage-1766799871174.png',
+    link: 'https://comprarplanseguro.shop/blindaje/',
+    items: [
+      {
+        id: '4-1',
+        title: 'Blindaje Total de Relación',
+        type: 'video',
+        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+      },
+      {
+        id: '4-2',
+        title: 'Inmunidad Contra Otros Hombres',
+        type: 'pdf',
+        url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+      },
+      {
+        id: '4-3',
+        title: 'Acceder al Sistema',
+        type: 'link',
+        url: 'https://comprarplanseguro.shop/blindaje/'
       }
     ]
   }
