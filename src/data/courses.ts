@@ -42,10 +42,10 @@ export const courses: Course[] = [
   },
   {
     id: '2',
-    title: '15 Maneras Irresistibles en WhatsApp',
+    title: 'Protocolo 89: Scripts Exactos',
     thumbnail:
       'https://comprarplanseguro.shop/wp-content/uploads/2025/06/imagem_gerada-2025-06-12T001538.498.png',
-    link: 'https://comprarplanseguro.shop/15-maneras/',
+    link: 'https://scriptsexatos.vercel.app/',
     items: [
       {
         id: '2-1',
