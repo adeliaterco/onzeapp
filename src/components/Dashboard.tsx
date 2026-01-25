@@ -19,7 +19,7 @@ export default function Dashboard({ onSelectCourse, onLogout, theme, onToggleThe
           {/* Logo + Título */}
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
             <img 
-              src="https://comprarplanseguro.shop/wp-content/uploads/2025/06/Nova-Imagem-Plan-A-Livro.png" 
+              src="https://static-media.hotmart.com/6Ngc0yomZfUJ3wh0EOmXE6lBbaM=/300x300/filters:quality(100)/hotmart/product_pictures/b410e65a-a807-461f-be12-d4efe5156abd/Editedimage_1767154026941.png" 
               alt="Logo" 
               className="w-6 h-6 sm:w-8 sm:h-8 rounded-md sm:rounded-lg flex-shrink-0 object-cover"
             />
